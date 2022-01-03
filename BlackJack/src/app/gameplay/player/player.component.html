@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="flex">
+    <app-game-card *ngFor="let card of cards" [CardValueMark]="card" [flipState]="flippedState"></app-game-card>
+  </div>
+
+  <div class="flex">
+    <div>
+      <span> Money: {{ moneyLeft }}$ </span>
+      <br>
+      <span>PLAYER</span>
+    </div>
+
+    <div style="margin-left: 50px;">
+      <input type="text" value="45" #betAmount>
+      <button class="bet" (click)="Bet(betAmount.value)" [disabled]="!finishRound">BET</button><br>
+      <button class="hit" (click)="Hit()" [disabled]="!afterBetting">Hit!</button><br>
+      <button class="done" (click)="Done()" [disabled]="!afterBetting">Done Bet</button>
+    </div>
+  </div>
+
+</div>

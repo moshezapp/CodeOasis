@@ -1,0 +1,13 @@
+<div class="container">
+  <span>DEALER</span><br>
+  <span> Money: {{ moneyLeft }}$ </span>
+
+  <div class="flex">
+    <app-game-card *ngFor="let card of cards" [CardValueMark]="card" [flipState]="flippedState"></app-game-card>
+
+    <!-- HIDDEN DEALER'S CARD -->
+    <app-game-card *ngIf="cards.length > 0" [CardValueMark]="hiddenCardImg" [flipState]="flippedState">
+    </app-game-card>
+  </div>
+
+</div>
